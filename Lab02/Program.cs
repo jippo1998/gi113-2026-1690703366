@@ -11,6 +11,7 @@ namespace Lab02
     {
         static void Main(string[] args)
         {
+            // part a
             string bossName = "Kirin";
             char rank = 'S';
             int level = 7;
@@ -42,6 +43,44 @@ namespace Lab02
             hppercent = currentHp * 100 / maxHp;
             Console.WriteLine($"Boss HP: {hppercent}%");
 
+            // part b
+            string bossName = "joppo";
+            int level = 14;
+
+            Console.WriteLine($"Boss Name: {bossName}");
+            Console.WriteLine($"Boss Level: {level}");
+            Console.WriteLine();
+
+            string playerName = "jeymye";
+            char Rank = 'c';
+
+            Console.WriteLine($"Player Name: {playerName}");
+            Console.WriteLine($"Player Rank: {Rank}");
+            Console.WriteLine();
+
+            string monsterName = "jippo";
+            int maxHp = 500;
+            int currentHp = 200;
+
+            Console.Write($"Monster Name: {monsterName}")
+            Console.WriteLine($"Monster HP: {currentHp} / {maxHp}");
+            Console.WriteLine();
+
+            string NPCName = "duppo";
+            float attackPower = 43.5f;
+
+            Console.WriteLine($"NPC Name: {NPCName}");
+            Console.WriteLine($"NPC Attack Power: {attackPower}");
+            Console.WriteLine();
+
+            string petName = "gongkum";
+            double petSpeed = 18.5;
+            bool isPet = true;
+
+            Console.WriteLine($"Pet Name: {petName}");
+            Console.WriteLine($"Pet Speed: {petSpeed}");
+            Console.WriteLine($"Is Pet: {isPet}");
+            Console.WriteLine();
         }
     }
 }
