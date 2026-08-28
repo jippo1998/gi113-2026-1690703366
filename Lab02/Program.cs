@@ -11,7 +11,7 @@ namespace Lab02
     {
         static void Main(string[] args)
         {
-            // part a
+            // Part A
             string bossName = "Kirin";
             char rank = 'S';
             int level = 7;
@@ -43,43 +43,81 @@ namespace Lab02
             hppercent = currentHp * 100 / maxHp;
             Console.WriteLine($"Boss HP: {hppercent}%");
 
-            // part b
-            string bossName = "joppo";
-            int level = 14;
+            // Part B
+            string playerName1 = "Joppo";
+            char rank1 = 'S';
+            int level1 = 7;
+            int maxEnergy1 = 240;  // Status for character 1
+            int currentEnergy1 = 175;
+            float attackPower1 = 42.5f;
+            double critMultiplier1 = 1.75;
+            bool isBoss1 = true;
 
-            Console.WriteLine($"Boss Name: {bossName}");
-            Console.WriteLine($"Boss Level: {level}");
+            Console.WriteLine("===== CHARACTER 1 =====");
+            Console.WriteLine($"NAME: {playerName1}");
+            Console.WriteLine($"RANK: {rank1}");
+            Console.WriteLine($"LEVEL: {level1}");
+            Console.WriteLine($"ENERGY: {currentEnergy1} / {maxEnergy1}");
+            Console.WriteLine($"ATTACK POWER: {attackPower1}");
+            Console.WriteLine($"CRIT MULTIPLIER: {critMultiplier1}");
+            Console.WriteLine($"IS BOSS: {isBoss1}");
             Console.WriteLine();
 
-            string playerName = "jeymye";
-            char Rank = 'c';
+            string playerName2 = "Jeymye";
+            char rank2 = 'A';
+            int level2 = 15;
+            int maxDurability = 450;  // Status for character 2
+            int currentDurability = 390;
+            float attackPower2 = 68.5f;
+            double critMultiplier2 = 2.10;
+            bool isBoss2 = false;
 
-            Console.WriteLine($"Player Name: {playerName}");
-            Console.WriteLine($"Player Rank: {Rank}");
+            Console.WriteLine("===== CHARACTER 2 =====");
+            Console.WriteLine($"NAME: {playerName2}");
+            Console.WriteLine($"RANK: {rank2}");
+            Console.WriteLine($"LEVEL: {level2}");
+            Console.WriteLine($"DURABILITY: {currentDurability} / {maxDurability}");
+            Console.WriteLine($"ATTACK POWER: {attackPower2}");
+            Console.WriteLine($"CRIT MULTIPLIER: {critMultiplier2}");
+            Console.WriteLine($"IS BOSS: {isBoss2}");
             Console.WriteLine();
 
-            string monsterName = "jippo";
-            int maxHp = 500;
-            int currentHp = 200;
+            string playerName3 = "Duppo";
+            char rank3 = 'B';
+            int level3 = 12;
+            int maxMana3 = 350;  // Status for character 3
+            int currentMana3 = 210;
+            float attackPower3 = 75.5f;
+            double critMultiplier3 = 1.95;
+            bool isBoss3 = false;
 
-            Console.Write($"Monster Name: {monsterName}")
-            Console.WriteLine($"Monster HP: {currentHp} / {maxHp}");
+            Console.WriteLine("===== CHARACTER 3 =====");
+            Console.WriteLine($"NAME: {playerName3}");
+            Console.WriteLine($"RANK: {rank3}");
+            Console.WriteLine($"LEVEL: {level3}");
+            Console.WriteLine($"MANA: {currentMana3} / {maxMana3}");
+            Console.WriteLine($"ATTACK POWER: {attackPower3}");
+            Console.WriteLine($"CRIT MULTIPLIER: {critMultiplier3}");
+            Console.WriteLine($"IS BOSS: {isBoss3}");
             Console.WriteLine();
 
-            string NPCName = "duppo";
-            float attackPower = 43.5f;
+            string playerName4 = "Gongkum";
+            char rank4 = 'S';
+            int level4 = 30;
+            int maxArmor4 = 1000;  // Status for character 4
+            int currentArmor4 = 850;
+            float attackPower4 = 120.5f;
+            double critMultiplier4 = 2.50;
+            bool isBoss4 = true;
 
-            Console.WriteLine($"NPC Name: {NPCName}");
-            Console.WriteLine($"NPC Attack Power: {attackPower}");
-            Console.WriteLine();
-
-            string petName = "gongkum";
-            double petSpeed = 18.5;
-            bool isPet = true;
-
-            Console.WriteLine($"Pet Name: {petName}");
-            Console.WriteLine($"Pet Speed: {petSpeed}");
-            Console.WriteLine($"Is Pet: {isPet}");
+            Console.WriteLine("===== CHARACTER 4 =====");
+            Console.WriteLine($"NAME: {playerName4}");
+            Console.WriteLine($"RANK: {rank4}");
+            Console.WriteLine($"LEVEL: {level4}");
+            Console.WriteLine($"ARMOR: {currentArmor4} / {maxArmor4}");
+            Console.WriteLine($"ATTACK POWER: {attackPower4}");
+            Console.WriteLine($"CRIT MULTIPLIER: {critMultiplier4}");
+            Console.WriteLine($"IS BOSS: {isBoss4}");
             Console.WriteLine();
         }
     }
