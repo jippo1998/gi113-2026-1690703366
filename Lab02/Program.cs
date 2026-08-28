@@ -47,8 +47,8 @@ namespace Lab02
             string playerName1 = "Joppo";
             char rank1 = 'S';
             int level1 = 7;
-            int maxEnergy1 = 240;  // Status for character 1
-            int currentEnergy1 = 175;
+            int maxEnergy1 = 240;   // Status for character 1
+            int currentEnergy1 = 200;
             float attackPower1 = 42.5f;
             double critMultiplier1 = 1.75;
             bool isBoss1 = true;
@@ -66,7 +66,7 @@ namespace Lab02
             string playerName2 = "Jeymye";
             char rank2 = 'A';
             int level2 = 15;
-            int maxDurability = 450;  // Status for character 2
+            int maxDurability = 450;   // Status for character 2
             int currentDurability = 390;
             float attackPower2 = 68.5f;
             double critMultiplier2 = 2.10;
@@ -85,7 +85,7 @@ namespace Lab02
             string playerName3 = "Duppo";
             char rank3 = 'B';
             int level3 = 12;
-            int maxMana3 = 350;  // Status for character 3
+            int maxMana3 = 350;   // Status for character 3
             int currentMana3 = 210;
             float attackPower3 = 75.5f;
             double critMultiplier3 = 1.95;
@@ -104,8 +104,8 @@ namespace Lab02
             string playerName4 = "Gongkum";
             char rank4 = 'S';
             int level4 = 30;
-            int maxArmor4 = 1000;  // Status for character 4
-            int currentArmor4 = 850;
+            int maxArmor4 = 1000;   // Status for character 4
+            int currentArmor4 = 1000;
             float attackPower4 = 120.5f;
             double critMultiplier4 = 2.50;
             bool isBoss4 = true;
