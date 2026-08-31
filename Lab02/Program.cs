@@ -21,6 +21,7 @@ namespace Lab02
             double critMultiplier = 1.75;
             bool isBoss = true;
 
+
             Console.WriteLine("BOSS STATUS: INITIAL");
             Console.WriteLine($"NAME: {bossName}");
             Console.WriteLine($"Rank: {rank}");
@@ -119,6 +120,7 @@ namespace Lab02
             Console.WriteLine($"CRIT MULTIPLIER: {critMultiplier4}");
             Console.WriteLine($"IS BOSS: {isBoss4}");
             Console.WriteLine();
+
         }
     }
 }
