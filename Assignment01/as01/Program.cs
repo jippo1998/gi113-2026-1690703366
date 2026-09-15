@@ -21,7 +21,7 @@
             double luck = 87.5;
             bool isPlayable = true;
 
-            Console.Writeline("██╗     ██╗████████╗████████╗██╗     ███████╗");
+            Console.WriteLine("██╗     ██╗████████╗████████╗██╗     ███████╗");
             Console.WriteLine("██║     ██║╚══██╔══╝╚══██╔══╝██║     ██╔════╝");
             Console.WriteLine("██║     ██║   ██║      ██║   ██║     █████╗  ");
             Console.WriteLine("██║     ██║   ██║      ██║   ██║     ██╔══╝  ");
@@ -39,30 +39,31 @@
             Console.WriteLine("██╔══╝  ██║   ██║██╔══██╗   ██║   ██║   ██║██║╚██╗██║██╔══╝  ");
             Console.WriteLine("██║     ╚██████╔╝██║  ██║   ██║   ╚██████╔╝██║ ╚████║███████╗");
             Console.WriteLine("╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝╚══════╝");
-           
-            Console.WriteLine($" |  Character : {characterName,-22}|");
-            Console.WriteLine($" |  Rank      : {characterRank,-22}|");
-            Console.WriteLine($" |  Age       : {age,-22}|");
-            Console.WriteLine(" |                                    |");
-            Console.WriteLine(" |          CHARACTER STATS           |");
-            Console.WriteLine(" |                                    |");
-            Console.WriteLine($" |  Happiness : {happiness,-22}|");
-            Console.WriteLine($" |  Luck      : {luck,-22}|");
-            Console.WriteLine($" |  Playable  : {isPlayable,-22}|");
-            Console.WriteLine(" |                                    |");
-            Console.WriteLine(" +-------------------------------------+");
+
+            Console.WriteLine("╔══════════════════════════════════════════╗");
+            Console.WriteLine("║          ✦ CHARACTER PROFILE ✦           ║");
+            Console.WriteLine("╠══════════════════════════════════════════╣");
+            Console.WriteLine($"║  ♡ Character : {characterName,-24}  ║");
+            Console.WriteLine($"║  ★ Rank      : {characterRank,-24}  ║");
+            Console.WriteLine($"║  ☺ Age       : {age,-24}  ║");
+            Console.WriteLine("╠══════════════════════════════════════════╣");
+            Console.WriteLine("║              CHARACTER STATS             ║");
+            Console.WriteLine("╠══════════════════════════════════════════╣");
+            Console.WriteLine($"║  ♡ Happiness : {happiness,-24}  ║");
+            Console.WriteLine($"║  ★ Luck      : {luck,-24}  ║");
+            Console.WriteLine($"║  ✓ Playable  : {isPlayable,-24}  ║");
+            Console.WriteLine("╚══════════════════════════════════════════╝");
             Console.WriteLine();
 
-            //implicit conversiondouble ageAsDouble = age;
+
+            // Implicit conversion
+            double ageAsDouble = age;
             Console.WriteLine($"Age as double (implicit): {ageAsDouble}");
             Console.WriteLine();
-
-            //Explicit Castint luckTruncated = (int)luck;
-            Console.WriteLine();
-
-            //Convert.ToInt32int luckRounded = Convert.ToInt32(luck);
-            Console.WriteLine();
-
+            // Explicit Cast
+            int luckTruncated = (int)luck;
+            // Convert.ToInt32
+            int luckRounded = Convert.ToInt32(luck);
             Console.WriteLine($"Luck cast (Truncated) : {luckTruncated}");
             Console.WriteLine($"Luck convert (Rounded) : {luckRounded}");
             Console.WriteLine();
