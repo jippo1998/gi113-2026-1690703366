@@ -1,185 +1,157 @@
-﻿
-
-
+﻿/*
+Student ID : 1690703366
+Name       : เมธปรียา บุญมาวงศ์
+Section    : SAC D 
+No.        : 2
+*/
 namespace lab06
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int lives = 0;//ตัวแปรหลักเพื่อเช็ก
+            // Hero Stats
+            int heroHp = 100;
+            int heroMana = 50;
+            int heroAtk = 30;
+            int heroDef = 20;
 
-            if (lives == 0) //ในวงเล็บคือเงื่อนไขที่ต้องเป็นจริง
+            // Monster Stats
+            int monHp = 120;
+            int monAtk = 25;
 
+            // Potion
+            int potionCount = 3;
+            int attackBuff = 20;
+
+            bool parryActive = false;
+
+            Console.WriteLine("+--------------------------------------+");
+            Console.WriteLine("|            LITTLE DRAGON             |");
+            Console.WriteLine("+--------------------------------------+");
+            Console.WriteLine("|                                      |");
+            Console.WriteLine("|              HERO STATUS             |");
+            Console.WriteLine("|                                      |");
+            Console.WriteLine($"|  HP      : {heroHp,-3} / 100               |");
+            Console.WriteLine($"|  MANA    : {heroMana,-3} / 100               |");
+            Console.WriteLine($"|  ATTACK  : {heroAtk,-3}                  |");
+            Console.WriteLine($"|  DEFENSE : {heroDef,-3}                  |");
+            Console.WriteLine($"|  POTION  : {potionCount,-3}                  |");
+            Console.WriteLine("|                                      |");
+            Console.WriteLine("+--------------------------------------+");
+            Console.WriteLine("|             MONSTER STATUS           |");
+            Console.WriteLine("|                                      |");
+            Console.WriteLine($"|  MONSTER HP     : {monHp,-3} / 120          |");
+            Console.WriteLine($"|  MONSTER ATTACK : {monAtk,-3}               |");
+            Console.WriteLine("|                                      |");
+            Console.WriteLine("+--------------------------------------+");
+            Console.WriteLine("|                ACTION                |");
+            Console.WriteLine("+--------------------------------------+");
+            Console.WriteLine("|                                      |");
+            Console.WriteLine("|  [1] ATTACK                         |");
+            Console.WriteLine("|      Attack the monster              |");
+            Console.WriteLine("|                                      |");
+            Console.WriteLine("|  [2] PARRY                          |");
+            Console.WriteLine("|      Reduce damage by 50%             |");
+            Console.WriteLine("|                                      |");
+            Console.WriteLine("|  [3] DRINK POTION BUFF              |");
+            Console.WriteLine("|      Increase Attack by 20           |");
+            Console.WriteLine("|                                      |");
+            Console.WriteLine("+--------------------------------------+");
+
+            Console.Write("\n>>> CHOOSE YOUR ACTION (1-3): ");
+
+            bool isInputValid = int.TryParse(
+                Console.ReadLine(),
+                out int choice
+            );
+
+            if (isInputValid == false || choice < 1 || choice > 3)
             {
-                //บล็อกของโค๊ดที่ทำงาน เมื่อเงื่อนไขเป้นจริง
-                Console.WriteLine("Game Over");
+                Console.WriteLine();
+                Console.WriteLine("Invalid Input!");
+                Console.WriteLine("Please enter action between 1 and 3.");
             }
-            else
+            else if (choice == 1)
             {
-                //บล็อกของโค๊ดที่ทำงาน เมื่อเงื่อนไขเป้นเท็จ
-                Console.WriteLine("Continue to play");
-            }
+                monHp -= heroAtk;
 
-            //เมื่อเงื่อนไขทำงานเสร็จแล้วเงื่อนไข เงื่อนไขไม่ตรงเลย โค๊ดทำงานต่อ
-            Console.WriteLine("your livel (1-99) :");
+                Console.WriteLine();
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("ACTION: ATTACK");
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine(
+                    $"Little Dragon attacked with {heroAtk} DMG!"
+                );
 
-            bool isPoisoned = false;
-            if (isPoisoned) { } // ได้เลยเพราะ ispoisoned เป็น false
-            if (isPoisoned) { } // ไม่ได้เพราะ ispoisoned 
-
-            bool HASKEY = true;
-            Console.WriteLine("your livel (1-99) :");
-            bool ok = int.TryParse(Console.ReadLine(), out int level);
-
-            if (!ok || level < 1 || level > 99)
-            {
-                Console.WriteLine("Invalid level input.");
-            }
-            else if (level <= 10 && HASKEY)
-            {
-                Console.WriteLine("Boss Floor unlocked!");
-            }
-            else if (level <= 5)
-            {
-                if (HASKEY == true)
+                if (monHp <= 0)
                 {
-                    Console.WriteLine("the door is open.");
+                    Console.WriteLine("Monster is defeated!");
                 }
                 else
                 {
-                    Console.WriteLine("Interlocked find a key to open the door.");
+                    Console.WriteLine(
+                        $"Monster HP is now {monHp}."
+                    );
                 }
             }
-            else
+            else if (choice == 2)
             {
-                Console.WriteLine("the door stays shut");
+                parryActive = true;
+
+                int damageTaken = monAtk;
+
+                if (parryActive == true)
+                {
+                    damageTaken = monAtk / 2;
+                }
+
+                heroHp -= damageTaken;
+
+                Console.WriteLine();
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("ACTION: PARRY");
+                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("Little Dragon prepared to parry!");
+                Console.WriteLine("Parry reduced damage by 50%.");
+                Console.WriteLine($"Monster attacked for {monAtk} DMG.");
+                Console.WriteLine($"Hero took {damageTaken} DMG.");
+                Console.WriteLine($"Hero HP is now {heroHp}.");
             }
-            //end
-
-            /*
-            Student ID : 1690703366
-            Name       : เมธปรียา บุญมาวงศ์
-            Section    : SAC D 
-            No.        : 2
-            */
-
-            static void Main()
+            else if (choice == 3)
             {
-                int heroHp = 100;
-                int monsterHp = 100;
-
-                Console.WriteLine("================================");
-                Console.WriteLine("         HERO VS MONSTER");
-                Console.WriteLine("================================");
-                Console.WriteLine("Hero HP    : 100");
-                Console.WriteLine("Monster HP : 100");
-                Console.WriteLine();
-
-                Console.WriteLine("Choose your action:");
-                Console.WriteLine("1. Attack");
-                Console.WriteLine("2. Run Away");
-                Console.WriteLine("3. Use Potion");
-                Console.WriteLine();
-
-                Console.Write("Your choice: ");
-
-                int choice;
-                bool ok = int.TryParse(Console.ReadLine(), out choice);
-
-                // Check invalid input
-                if (!ok)
+                if (potionCount > 0)
                 {
-                    Console.WriteLine("Invalid input.");
-                }
-                else if (choice == 1)
-                {
-                    // Attack
-                    monsterHp = monsterHp - 30;
-                    heroHp = heroHp - 20;
+                    potionCount--;
+                    heroAtk += attackBuff;
 
                     Console.WriteLine();
-                    Console.WriteLine("You attack the monster!");
-                    Console.WriteLine("Monster takes 30 damage.");
-                    Console.WriteLine("Monster HP is now " + monsterHp + ".");
-                    Console.WriteLine("The monster attacks you for 20 damage.");
-                    Console.WriteLine("Hero HP is now " + heroHp + ".");
-
-                    if (heroHp >= 50)
-                    {
-                        Console.WriteLine("You are still strong!");
-                    }
-                    else if (heroHp > 0)
-                    {
-                        Console.WriteLine("Your HP is low!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Game Over!");
-                    }
-                }
-                else if (choice == 2)
-                {
-                    // Run Away
-                    heroHp = heroHp - 30;
-
-                    Console.WriteLine();
-                    Console.WriteLine("You try to run away!");
-                    Console.WriteLine("The monster attacks you for 30 damage.");
-                    Console.WriteLine("Hero HP is now " + heroHp + ".");
-                    Console.WriteLine("You escaped from the monster!");
-
-                    if (heroHp >= 50)
-                    {
-                        Console.WriteLine("You escaped safely!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You escaped, but you are badly injured.");
-                    }
-                }
-                else if (choice == 3)
-                {
-                    // Use Potion
-                    heroHp = heroHp + 20;
-
-                    if (heroHp > 100)
-                    {
-                        heroHp = 100;
-                    }
-
-                    Console.WriteLine();
-                    Console.WriteLine("You use a potion!");
-                    Console.WriteLine("Hero recovers 20 HP.");
-                    Console.WriteLine("Hero HP is now " + heroHp + ".");
-
-                    if (heroHp >= 50)
-                    {
-                        Console.WriteLine("You feel stronger!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You still need to be careful.");
-                    }
+                    Console.WriteLine("----------------------------------------");
+                    Console.WriteLine("ACTION: DRINK POTION BUFF");
+                    Console.WriteLine("----------------------------------------");
+                    Console.WriteLine("Little Dragon drank a potion!");
+                    Console.WriteLine(
+                        $"Attack increased by {attackBuff}."
+                    );
+                    Console.WriteLine(
+                        $"Hero Attack is now {heroAtk}."
+                    );
+                    Console.WriteLine(
+                        $"Potions remaining: {potionCount}"
+                    );
                 }
                 else
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Invalid input.");
-                    Console.WriteLine("Please choose 1, 2, or 3.");
+                    Console.WriteLine("You have no potions left!");
                 }
-
-                Console.WriteLine();
-                Console.WriteLine("================================");
-                Console.WriteLine("           GAME END");
-                Console.WriteLine("================================");
-
-               
-
-            
             }
+
+            Console.WriteLine();
+            Console.WriteLine("+--------------------------------------+");
+            Console.WriteLine("|             BATTLE END               |");
+            Console.WriteLine("+--------------------------------------+");
         }
-
 
     }
 }
