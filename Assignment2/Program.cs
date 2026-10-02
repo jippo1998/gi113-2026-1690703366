@@ -1,4 +1,11 @@
-﻿namespace Assignment2
+﻿/*
+* Student ID :1690703366
+* Name       :เมธปรียา บุญมาวงศ์
+* Section    :129D
+* No.        :N/A
+* Course     : GI113 Computer Programming (GI)
+*/
+namespace Assignment2
 {
     internal class Program
     {
@@ -26,13 +33,12 @@
             Console.Write("Choose Menu: ");
             char.TryParse(Console.ReadLine(), out char menu);
 
-            Console.Write("How much would you like: ");
+            Console.Write("How much would you like: "); 
             bool amountParsed = double.TryParse(
                 Console.ReadLine(),
                 out double amount
             );
 
-            Console.WriteLine();
             Console.WriteLine("----------------------------------------");
 
             if (amountParsed && amount > 0 && amount <= MaxBatch)
@@ -54,10 +60,7 @@
 
                     Console.WriteLine("MAGIC BREAKDOWN");
                     Console.WriteLine("The princess carefully breaks the ingot...");
-                    Console.WriteLine();
-                    Console.WriteLine(
-                        $"=> {amount:F2} {MaterialName} Ingot = {result:F2} {MaterialName} Ore"
-                    );
+                    Console.WriteLine( $"=> {amount:F2} {MaterialName} Ingot = {result:F2} {MaterialName} Ore");
                 }
                 else
                 {
